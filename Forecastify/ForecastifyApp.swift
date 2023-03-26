@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Forecastify_Watch_AppApp: App {
+struct ForecastifyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
