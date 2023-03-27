@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F82B44329D0BD1800DC3A98 /* ForecastifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F82B44229D0BD1800DC3A98 /* ForecastifyApp.swift */; };
-		4F82B44529D0BD1800DC3A98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F82B44429D0BD1800DC3A98 /* ContentView.swift */; };
 		4F82B44729D0BD1800DC3A98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F82B44629D0BD1800DC3A98 /* Assets.xcassets */; };
-		4F82B44A29D0BD1800DC3A98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F82B44929D0BD1800DC3A98 /* Preview Assets.xcassets */; };
+		4FD0873429D186370075053E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD0873329D186370075053E /* main.m */; };
+		4FD0873829D187180075053E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD0873729D187180075053E /* AppDelegate.m */; };
+		4FD0876429D18FEF0075053E /* ClassAllocator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD0876329D18FEF0075053E /* ClassAllocator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F82B43F29D0BD1800DC3A98 /* Forecastify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecastify.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F82B44229D0BD1800DC3A98 /* ForecastifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastifyApp.swift; sourceTree = "<group>"; };
-		4F82B44429D0BD1800DC3A98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4F82B44629D0BD1800DC3A98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4F82B44929D0BD1800DC3A98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4FD0873229D186370075053E /* Forecastify-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Forecastify-Bridging-Header.h"; sourceTree = "<group>"; };
+		4FD0873329D186370075053E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4FD0873529D186910075053E /* Forecastify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Forecastify.entitlements; sourceTree = "<group>"; };
+		4FD0873629D187180075053E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4FD0873729D187180075053E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4FD0873929D189530075053E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4FD0876229D18FEF0075053E /* ClassAllocator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassAllocator.h; sourceTree = "<group>"; };
+		4FD0876329D18FEF0075053E /* ClassAllocator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassAllocator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,20 +56,17 @@
 		4F82B44129D0BD1800DC3A98 /* Forecastify */ = {
 			isa = PBXGroup;
 			children = (
-				4F82B44229D0BD1800DC3A98 /* ForecastifyApp.swift */,
-				4F82B44429D0BD1800DC3A98 /* ContentView.swift */,
+				4FD0873929D189530075053E /* Info.plist */,
+				4FD0873529D186910075053E /* Forecastify.entitlements */,
 				4F82B44629D0BD1800DC3A98 /* Assets.xcassets */,
-				4F82B44829D0BD1800DC3A98 /* Preview Content */,
+				4FD0876229D18FEF0075053E /* ClassAllocator.h */,
+				4FD0876329D18FEF0075053E /* ClassAllocator.m */,
+				4FD0873329D186370075053E /* main.m */,
+				4FD0873629D187180075053E /* AppDelegate.h */,
+				4FD0873729D187180075053E /* AppDelegate.m */,
+				4FD0873229D186370075053E /* Forecastify-Bridging-Header.h */,
 			);
 			path = Forecastify;
-			sourceTree = "<group>";
-		};
-		4F82B44829D0BD1800DC3A98 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				4F82B44929D0BD1800DC3A98 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +101,7 @@
 				TargetAttributes = {
 					4F82B43E29D0BD1800DC3A98 = {
 						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
 					};
 				};
 			};
@@ -125,7 +128,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F82B44A29D0BD1800DC3A98 /* Preview Assets.xcassets in Resources */,
 				4F82B44729D0BD1800DC3A98 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +139,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F82B44529D0BD1800DC3A98 /* ContentView.swift in Sources */,
-				4F82B44329D0BD1800DC3A98 /* ForecastifyApp.swift in Sources */,
+				4FD0873829D187180075053E /* AppDelegate.m in Sources */,
+				4FD0873429D186370075053E /* main.m in Sources */,
+				4FD0876429D18FEF0075053E /* ClassAllocator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,8 +156,8 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -211,8 +214,8 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -259,12 +262,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Forecastify/Forecastify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Forecastify/Preview Content\"";
 				DEVELOPMENT_TEAM = P53D29U9LJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Forecastify/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Forecastify;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
@@ -278,6 +283,8 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Forecastify/Forecastify-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 9.4;
@@ -289,12 +296,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Forecastify/Forecastify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Forecastify/Preview Content\"";
 				DEVELOPMENT_TEAM = P53D29U9LJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Forecastify/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Forecastify;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
@@ -308,6 +317,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Forecastify/Forecastify-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
