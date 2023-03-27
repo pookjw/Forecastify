@@ -18,7 +18,6 @@ static BaseViewController * _baseViewController_managedObject(id self) {
 
 static void (*_baseViewController_original_dealloc)(id, SEL);
 static void _baseViewController_new_dealloc(id self, SEL cmd) {
-//    [_baseViewController_managedObject(self) release];
     _baseViewController_original_dealloc(self, cmd);
 }
 
