@@ -8,22 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		4F82B44729D0BD1800DC3A98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F82B44629D0BD1800DC3A98 /* Assets.xcassets */; };
+		4FC530D529D1A57100344200 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC530D429D1A57100344200 /* BaseViewController.m */; };
+		4FC530D829D1AABB00344200 /* PurpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC530D729D1AABB00344200 /* PurpleViewController.m */; };
 		4FD0873429D186370075053E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD0873329D186370075053E /* main.m */; };
 		4FD0873829D187180075053E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD0873729D187180075053E /* AppDelegate.m */; };
-		4FD0876429D18FEF0075053E /* ClassAllocator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD0876329D18FEF0075053E /* ClassAllocator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F82B43F29D0BD1800DC3A98 /* Forecastify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecastify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F82B44629D0BD1800DC3A98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4FC530D329D1A57100344200 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		4FC530D429D1A57100344200 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		4FC530D629D1AABB00344200 /* PurpleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurpleViewController.h; sourceTree = "<group>"; };
+		4FC530D729D1AABB00344200 /* PurpleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurpleViewController.m; sourceTree = "<group>"; };
 		4FD0873229D186370075053E /* Forecastify-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Forecastify-Bridging-Header.h"; sourceTree = "<group>"; };
 		4FD0873329D186370075053E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4FD0873529D186910075053E /* Forecastify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Forecastify.entitlements; sourceTree = "<group>"; };
 		4FD0873629D187180075053E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4FD0873729D187180075053E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4FD0873929D189530075053E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		4FD0876229D18FEF0075053E /* ClassAllocator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassAllocator.h; sourceTree = "<group>"; };
-		4FD0876329D18FEF0075053E /* ClassAllocator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassAllocator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,14 +62,24 @@
 				4FD0873929D189530075053E /* Info.plist */,
 				4FD0873529D186910075053E /* Forecastify.entitlements */,
 				4F82B44629D0BD1800DC3A98 /* Assets.xcassets */,
-				4FD0876229D18FEF0075053E /* ClassAllocator.h */,
-				4FD0876329D18FEF0075053E /* ClassAllocator.m */,
+				4FC530D929D1B0E000344200 /* Base */,
+				4FC530D629D1AABB00344200 /* PurpleViewController.h */,
+				4FC530D729D1AABB00344200 /* PurpleViewController.m */,
 				4FD0873329D186370075053E /* main.m */,
 				4FD0873629D187180075053E /* AppDelegate.h */,
 				4FD0873729D187180075053E /* AppDelegate.m */,
 				4FD0873229D186370075053E /* Forecastify-Bridging-Header.h */,
 			);
 			path = Forecastify;
+			sourceTree = "<group>";
+		};
+		4FC530D929D1B0E000344200 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4FC530D329D1A57100344200 /* BaseViewController.h */,
+				4FC530D429D1A57100344200 /* BaseViewController.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +152,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FC530D829D1AABB00344200 /* PurpleViewController.m in Sources */,
+				4FC530D529D1A57100344200 /* BaseViewController.m in Sources */,
 				4FD0873829D187180075053E /* AppDelegate.m in Sources */,
 				4FD0873429D186370075053E /* main.m in Sources */,
-				4FD0876429D18FEF0075053E /* ClassAllocator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

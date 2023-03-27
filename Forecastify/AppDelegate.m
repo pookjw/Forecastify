@@ -7,28 +7,29 @@
 
 #import "AppDelegate.h"
 #import <objc/message.h>
-#import "ClassAllocator.h"
+#import "PurpleViewController.h"
 
 @interface AppDelegate ()
 @property (retain) id _Nullable window;
+@property (retain) BaseViewController *rootViewController;
 @end
 
 @implementation AppDelegate
 
 - (void)dealloc {
     [_window release];
+    [_rootViewController release];
     [super dealloc];
 }
 
 - (BOOL)application:(id)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     id window = [NSClassFromString(@"UIWindow") new];
-    id viewController = [ClassAllocator.PurpleViewController new];
-    id view = ((id (*)(id, SEL))objc_msgSend)(viewController, NSSelectorFromString(@"view"));
-    id systemPurpleColor = ((id (*)(id, SEL))objc_msgSend)(NSClassFromString(@"UIColor"), NSSelectorFromString(@"systemPurpleColor"));
-    ((void (*)(id, SEL, id _Nullable))objc_msgSend)(view, NSSelectorFromString(@"setBackgroundColor:"), systemPurpleColor);
+    PurpleViewController *rootViewController = [PurpleViewController new];
     
-    ((void (*)(id, SEL, id _Nullable))objc_msgSend)(window, NSSelectorFromString(@"setRootViewController:"), viewController);
-    [viewController release];
+    ((void (*)(id, SEL, id _Nullable))objc_msgSend)(window, NSSelectorFromString(@"setRootViewController:"), rootViewController.viewController);
+    
+    self.rootViewController = rootViewController;
+    [rootViewController release];
     
     ((void (*)(id, SEL))objc_msgSend)(window, NSSelectorFromString(@"makeKeyAndVisible"));
     
@@ -44,6 +45,10 @@
 
 - (id)extendLaunchTest {
     return nil;
+}
+
+- (void)applicationWillSuspend:(id)arg0 {
+    
 }
 
 @end
