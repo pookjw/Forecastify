@@ -21,21 +21,23 @@ static void _baseViewController_new_dealloc(id self, SEL cmd) {
     _baseViewController_original_dealloc(self, cmd);
 }
 
-static void _baseViewController_viewDidLoad(id self, SEL cmd) {
+static void (*_baseViewController_original_viewDidLoad)(id, SEL);
+static void _baseViewController_new_viewDidLoad(id self, SEL cmd) {
     [_baseViewController_managedObject(self) viewDidLoad];
 }
 
-static id _baseViewController_view(id self, SEL cmd) {
+static id (*_baseViewController_original_view)(id, SEL);
+static id _baseViewController_new_view(id self, SEL cmd) {
     return [_baseViewController_managedObject(self) view];
 }
 
-static void _baseViewController_setView(id self, SEL cmd, id view) {
+static void (*_baseViewController_original_setView)(id self, SEL cmd, id view);
+static void _baseViewController_new_setView(id self, SEL cmd, id view) {
     [_baseViewController_managedObject(self) setView:view];
 }
 
 @interface BaseViewController ()
 @property (class, readonly) Class baseViewControllerClass;
-@property (readonly, nonatomic) struct objc_super superInfo;
 @end
 
 @implementation BaseViewController
@@ -54,11 +56,14 @@ static void _baseViewController_setView(id self, SEL cmd, id view) {
         _baseViewController_original_dealloc = (void (*)(id, SEL))class_getMethodImplementation(baseViewControllerClass, @selector(dealloc));
         class_replaceMethod(baseViewControllerClass, @selector(dealloc), (IMP)_baseViewController_new_dealloc, nil);
         
-        class_addMethod(baseViewControllerClass, @selector(viewDidLoad), (IMP)_baseViewController_viewDidLoad, nil);
+        _baseViewController_original_viewDidLoad = (void (*)(id, SEL))class_getMethodImplementation(baseViewControllerClass, @selector(viewDidLoad));
+        class_replaceMethod(baseViewControllerClass, @selector(viewDidLoad), (IMP)_baseViewController_new_viewDidLoad, nil);
         
-        class_addMethod(baseViewControllerClass, @selector(view), (IMP)_baseViewController_view, nil);
+        _baseViewController_original_view = (id (*)(id, SEL))class_getMethodImplementation(baseViewControllerClass, @selector(view));
+        class_replaceMethod(baseViewControllerClass, @selector(view), (IMP)_baseViewController_new_view, nil);
         
-        class_addMethod(baseViewControllerClass, @selector(setView:), (IMP)_baseViewController_setView, nil);
+        _baseViewController_original_setView = (void (*)(id, SEL, id))class_getMethodImplementation(baseViewControllerClass, @selector(setView:));
+        class_replaceMethod(baseViewControllerClass, @selector(setView:), (IMP)_baseViewController_new_setView, nil);
     });
     
     objc_sync_exit(self);
@@ -85,23 +90,15 @@ static void _baseViewController_setView(id self, SEL cmd, id view) {
 }
 
 - (id)view {
-    struct objc_super superInfo = self.superInfo;
-    return ((id (*)(struct objc_super *, SEL))objc_msgSendSuper)(&superInfo, @selector(view));
+    return _baseViewController_original_view(self.viewController, @selector(view));
 }
 
 - (void)setView:(id)view {
-    struct objc_super superInfo = self.superInfo;
-    ((void (*)(struct objc_super *, SEL, id))objc_msgSendSuper)(&superInfo, @selector(setView:), view);
+    _baseViewController_original_setView(self.viewController, @selector(setView:), view);
 }
 
 - (void)viewDidLoad {
-    struct objc_super superInfo = self.superInfo;
-    ((void (*)(struct objc_super *, SEL))objc_msgSendSuper)(&superInfo, @selector(viewDidLoad));
-}
-
-- (struct objc_super)superInfo {
-    struct objc_super superInfo = { self.viewController, [self.viewController superclass] };
-    return superInfo;
+    _baseViewController_original_viewDidLoad(self.viewController, @selector(viewDidLoad));
 }
 
 @end
