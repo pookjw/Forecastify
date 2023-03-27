@@ -69,7 +69,7 @@ static void _baseViewController_setView(id self, SEL cmd, id view) {
 - (instancetype)init {
     if (self = [super init]) {
         id viewController = [BaseViewController.baseViewControllerClass new];
-        object_setInstanceVariable(viewController, "managedObject", self);
+        object_setInstanceVariable(viewController, "managedObject", self); // assign, for avoiding retain cycle.
         
         [self->_viewController release];
         self->_viewController = [viewController retain];
