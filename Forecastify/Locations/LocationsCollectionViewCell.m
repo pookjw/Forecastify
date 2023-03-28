@@ -45,7 +45,6 @@ static void _locationsCollectionViewCell_prepareForReuse(id self, SEL cmd) {
 }
 
 @interface LocationsCollectionViewCell ()
-@property (readonly, nonatomic) struct objc_super superInfo;
 @end
 
 @implementation LocationsCollectionViewCell
@@ -76,19 +75,19 @@ static void _locationsCollectionViewCell_prepareForReuse(id self, SEL cmd) {
 - (id)locationsCollectionViewCell {
     objc_sync_enter(self);
     
-    __weak id listPlatterCell = self->_locationsCollectionViewCell;
+    __weak id locationsCollectionViewCell = self->_locationsCollectionViewCell;
     
-    if (listPlatterCell) {
-        [listPlatterCell retain];
+    if (locationsCollectionViewCell) {
+        [locationsCollectionViewCell retain];
     } else {
-        listPlatterCell = [LocationsCollectionViewCell.locationsCollectionViewCellClass new];
-        object_setInstanceVariable(listPlatterCell, "managedObject", [self retain]);
-        self->_locationsCollectionViewCell = listPlatterCell;
+        locationsCollectionViewCell = [LocationsCollectionViewCell.locationsCollectionViewCellClass new];
+        object_setInstanceVariable(locationsCollectionViewCell, "managedObject", [self retain]);
+        self->_locationsCollectionViewCell = locationsCollectionViewCell;
     }
     
     objc_sync_exit(self);
     
-    return [listPlatterCell autorelease];
+    return [locationsCollectionViewCell autorelease];
 }
 
 - (id)contentView {
