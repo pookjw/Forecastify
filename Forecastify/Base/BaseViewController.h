@@ -10,8 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseViewController : NSObject
-@property (retain, readonly) id viewController;
+@property (readonly, assign, nonatomic) id viewController;
 @property (null_resettable, nonatomic, retain) id view;
+- (void)loadView;
 - (void)viewDidLoad;
 @end
 

@@ -7,14 +7,15 @@
 
 #import <Foundation/Foundation.h>
 #import <dlfcn.h>
+#import "DLManager.h"
 #import "AppDelegate.h"
 
 int main(int argc, char * argv[]) {
-    void *uiKit = dlopen("/System/Library/Frameworks/UIKit.framework/UIKit", RTLD_NOW);
+    void *uiKit = DLManager.sharedInstance.uiKit;
     int (*UIApplicationMain)(int, char * _Nullable *, NSString * _Nullable, NSString * _Nullable) = dlsym(uiKit, "UIApplicationMain");
     assert(UIApplicationMain);
     
-    void *watchKit = dlopen("/System/Library/Frameworks/WatchKit.framework/WatchKit", RTLD_NOW);
+    void *watchKit = DLManager.sharedInstance.watchKit;
     assert(watchKit);
     
     return UIApplicationMain(argc, argv, @"SPApplication", NSStringFromClass(AppDelegate.class));

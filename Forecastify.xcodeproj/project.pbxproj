@@ -8,15 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		4F82B44729D0BD1800DC3A98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F82B44629D0BD1800DC3A98 /* Assets.xcassets */; };
+		4FA74C2029D2B76100DB17B4 /* BaseListPlatterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA74C1F29D2B76100DB17B4 /* BaseListPlatterCell.m */; };
 		4FC530D529D1A57100344200 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC530D429D1A57100344200 /* BaseViewController.m */; };
 		4FC530D829D1AABB00344200 /* PurpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC530D729D1AABB00344200 /* PurpleViewController.m */; };
 		4FD0873429D186370075053E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD0873329D186370075053E /* main.m */; };
 		4FD0873829D187180075053E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD0873729D187180075053E /* AppDelegate.m */; };
+		4FDBE50F29D2847300CD380D /* NSObject+Foundation_IvarDescription.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FDBE50E29D2847300CD380D /* NSObject+Foundation_IvarDescription.mm */; };
+		4FDBE51229D2865800CD380D /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDBE51129D2865800CD380D /* LocationsViewController.m */; };
+		4FDBE51529D288B600CD380D /* DLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDBE51429D288B600CD380D /* DLManager.m */; };
+		4FDBE54129D28C9400CD380D /* LocationsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDBE54029D28C9400CD380D /* LocationsViewModel.m */; };
+		4FDBE54429D28CA400CD380D /* LocationsSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDBE54329D28CA400CD380D /* LocationsSectionModel.m */; };
+		4FDBE54729D28CB400CD380D /* LocationsItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDBE54629D28CB400CD380D /* LocationsItemModel.m */; };
+		4FDBE54A29D28EE000CD380D /* compareNullableValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDBE54929D28EE000CD380D /* compareNullableValues.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F82B43F29D0BD1800DC3A98 /* Forecastify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecastify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F82B44629D0BD1800DC3A98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4FA74C1E29D2B76100DB17B4 /* BaseListPlatterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseListPlatterCell.h; sourceTree = "<group>"; };
+		4FA74C1F29D2B76100DB17B4 /* BaseListPlatterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseListPlatterCell.m; sourceTree = "<group>"; };
 		4FC530D329D1A57100344200 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		4FC530D429D1A57100344200 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		4FC530D629D1AABB00344200 /* PurpleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurpleViewController.h; sourceTree = "<group>"; };
@@ -27,6 +37,20 @@
 		4FD0873629D187180075053E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4FD0873729D187180075053E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4FD0873929D189530075053E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4FDBE50D29D2847300CD380D /* NSObject+Foundation_IvarDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Foundation_IvarDescription.h"; sourceTree = "<group>"; };
+		4FDBE50E29D2847300CD380D /* NSObject+Foundation_IvarDescription.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObject+Foundation_IvarDescription.mm"; sourceTree = "<group>"; };
+		4FDBE51029D2865800CD380D /* LocationsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationsViewController.h; sourceTree = "<group>"; };
+		4FDBE51129D2865800CD380D /* LocationsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
+		4FDBE51329D288B600CD380D /* DLManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLManager.h; sourceTree = "<group>"; };
+		4FDBE51429D288B600CD380D /* DLManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLManager.m; sourceTree = "<group>"; };
+		4FDBE53F29D28C9400CD380D /* LocationsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationsViewModel.h; sourceTree = "<group>"; };
+		4FDBE54029D28C9400CD380D /* LocationsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationsViewModel.m; sourceTree = "<group>"; };
+		4FDBE54229D28CA400CD380D /* LocationsSectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationsSectionModel.h; sourceTree = "<group>"; };
+		4FDBE54329D28CA400CD380D /* LocationsSectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationsSectionModel.m; sourceTree = "<group>"; };
+		4FDBE54529D28CB400CD380D /* LocationsItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationsItemModel.h; sourceTree = "<group>"; };
+		4FDBE54629D28CB400CD380D /* LocationsItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationsItemModel.m; sourceTree = "<group>"; };
+		4FDBE54829D28ED900CD380D /* compareNullableValues.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = compareNullableValues.h; sourceTree = "<group>"; };
+		4FDBE54929D28EE000CD380D /* compareNullableValues.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = compareNullableValues.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +89,16 @@
 				4FC530D929D1B0E000344200 /* Base */,
 				4FC530D629D1AABB00344200 /* PurpleViewController.h */,
 				4FC530D729D1AABB00344200 /* PurpleViewController.m */,
-				4FD0873329D186370075053E /* main.m */,
+				4FDBE53E29D28C7D00CD380D /* Locations */,
 				4FD0873629D187180075053E /* AppDelegate.h */,
 				4FD0873729D187180075053E /* AppDelegate.m */,
+				4FD0873329D186370075053E /* main.m */,
+				4FDBE51329D288B600CD380D /* DLManager.h */,
+				4FDBE51429D288B600CD380D /* DLManager.m */,
+				4FDBE50D29D2847300CD380D /* NSObject+Foundation_IvarDescription.h */,
+				4FDBE50E29D2847300CD380D /* NSObject+Foundation_IvarDescription.mm */,
+				4FDBE54829D28ED900CD380D /* compareNullableValues.h */,
+				4FDBE54929D28EE000CD380D /* compareNullableValues.m */,
 				4FD0873229D186370075053E /* Forecastify-Bridging-Header.h */,
 			);
 			path = Forecastify;
@@ -78,8 +109,25 @@
 			children = (
 				4FC530D329D1A57100344200 /* BaseViewController.h */,
 				4FC530D429D1A57100344200 /* BaseViewController.m */,
+				4FA74C1E29D2B76100DB17B4 /* BaseListPlatterCell.h */,
+				4FA74C1F29D2B76100DB17B4 /* BaseListPlatterCell.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		4FDBE53E29D28C7D00CD380D /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				4FDBE51029D2865800CD380D /* LocationsViewController.h */,
+				4FDBE51129D2865800CD380D /* LocationsViewController.m */,
+				4FDBE53F29D28C9400CD380D /* LocationsViewModel.h */,
+				4FDBE54029D28C9400CD380D /* LocationsViewModel.m */,
+				4FDBE54229D28CA400CD380D /* LocationsSectionModel.h */,
+				4FDBE54329D28CA400CD380D /* LocationsSectionModel.m */,
+				4FDBE54529D28CB400CD380D /* LocationsItemModel.h */,
+				4FDBE54629D28CB400CD380D /* LocationsItemModel.m */,
+			);
+			path = Locations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,9 +201,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FC530D829D1AABB00344200 /* PurpleViewController.m in Sources */,
+				4FDBE54A29D28EE000CD380D /* compareNullableValues.m in Sources */,
 				4FC530D529D1A57100344200 /* BaseViewController.m in Sources */,
+				4FDBE50F29D2847300CD380D /* NSObject+Foundation_IvarDescription.mm in Sources */,
+				4FDBE54429D28CA400CD380D /* LocationsSectionModel.m in Sources */,
 				4FD0873829D187180075053E /* AppDelegate.m in Sources */,
 				4FD0873429D186370075053E /* main.m in Sources */,
+				4FDBE51229D2865800CD380D /* LocationsViewController.m in Sources */,
+				4FDBE51529D288B600CD380D /* DLManager.m in Sources */,
+				4FDBE54129D28C9400CD380D /* LocationsViewModel.m in Sources */,
+				4FDBE54729D28CB400CD380D /* LocationsItemModel.m in Sources */,
+				4FA74C2029D2B76100DB17B4 /* BaseListPlatterCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,13 +342,13 @@
 				INFOPLIST_FILE = Forecastify/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Forecastify;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.pookjw.Forecastify;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pookjw.Forecastify.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -320,13 +376,13 @@
 				INFOPLIST_FILE = Forecastify/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Forecastify;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.pookjw.Forecastify;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pookjw.Forecastify.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
