@@ -8,7 +8,6 @@
 #import "AppDelegate.h"
 #import <objc/message.h>
 #import "LocationsViewController.h"
-#import "PurpleViewController.h"
 
 @interface AppDelegate ()
 @property (retain) id _Nullable window;
@@ -23,7 +22,7 @@
 
 - (BOOL)application:(id)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     id window = [NSClassFromString(@"UIWindow") new];
-    PurpleViewController *rootViewController = [PurpleViewController new];
+    LocationsViewController *rootViewController = [LocationsViewController new];
     
     ((void (*)(id, SEL, id _Nullable))objc_msgSend)(window, NSSelectorFromString(@"setRootViewController:"), rootViewController.viewController);
     

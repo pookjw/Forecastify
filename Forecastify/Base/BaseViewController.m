@@ -39,11 +39,10 @@ static void _baseViewController_setView(id self, SEL cmd, id view) {
 
 @interface BaseViewController ()
 @property (class, readonly, nonatomic) Class baseViewControllerClass;
-@property (readonly, nonatomic) struct objc_super superInfo;
 @end
 
 @implementation BaseViewController {
-    id _viewController;
+    id _Nullable _viewController;
 }
 
 + (Class)baseViewControllerClass {
@@ -88,28 +87,23 @@ static void _baseViewController_setView(id self, SEL cmd, id view) {
 }
 
 - (id)view {
-    struct objc_super superInfo = self.superInfo;
+    struct objc_super superInfo = { self.viewController, [self.viewController superclass] };
     return ((id (*)(struct objc_super *, SEL))objc_msgSendSuper)(&superInfo, @selector(view));
 }
 
 - (void)setView:(id)view {
-    struct objc_super superInfo = self.superInfo;
+    struct objc_super superInfo = { self.viewController, [self.viewController superclass] };
     ((void (*)(struct objc_super *, SEL, id))objc_msgSendSuper)(&superInfo, @selector(setView:), view);
 }
 
 - (void)loadView {
-    struct objc_super superInfo = self.superInfo;
+    struct objc_super superInfo = { self.viewController, [self.viewController superclass] };
     ((void (*)(struct objc_super *, SEL))objc_msgSendSuper)(&superInfo, @selector(loadView));
 }
 
 - (void)viewDidLoad {
-    struct objc_super superInfo = self.superInfo;
-    ((void (*)(struct objc_super *, SEL))objc_msgSendSuper)(&superInfo, @selector(viewDidLoad));
-}
-
-- (struct objc_super)superInfo {
     struct objc_super superInfo = { self.viewController, [self.viewController superclass] };
-    return superInfo;
+    ((void (*)(struct objc_super *, SEL))objc_msgSendSuper)(&superInfo, @selector(viewDidLoad));
 }
 
 @end

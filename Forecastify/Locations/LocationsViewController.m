@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <objc/message.h>
 #import "LocationsViewModel.h"
+#import "LocationsCollectionViewCell.h"
 
 @interface LocationsViewController ()
 @property (readonly, nonatomic) id collectionView;
@@ -49,11 +50,24 @@
 }
 
 - (id)makeDataSource {
-    id dataSource = ((id (*)(id, SEL, id, id _Nullable (^)(id, NSIndexPath *, id)))objc_msgSend)([NSClassFromString(@"UICollectionViewDiffableDataSource") alloc], NSSelectorFromString(@"initWithCollectionView:cellProvider:"), self.collectionView, ^id _Nullable(id collectionView, NSIndexPath *indexPath, id itemIdentifier){
-        return nil;
+    id cellRegistration = [self makeCellRegistration];
+    
+    id dataSource = ((id (*)(id, SEL, id, id _Nullable (^)(id, NSIndexPath *, id)))objc_msgSend)([NSClassFromString(@"UICollectionViewDiffableDataSource") alloc], NSSelectorFromString(@"initWithCollectionView:cellProvider:"), self.collectionView, ^id _Nullable(id collectionView, NSIndexPath *indexPath, id itemIdentifier) {
+        id cell = ((id (*)(id, SEL, id, NSIndexPath *, id))objc_msgSend)(collectionView, NSSelectorFromString(@"dequeueConfiguredReusableCellWithRegistration:forIndexPath:item:"), cellRegistration, indexPath, itemIdentifier);
+        return cell;
     });
     
     return [dataSource autorelease];
+}
+
+- (id)makeCellRegistration {
+    void (^handler)(id, NSIndexPath *, id) = ^(id cell, NSIndexPath *indexPath, id item) {
+        
+    };
+    
+    id cellRegistration = ((id (*)(id, SEL, Class, void (^)(id, NSIndexPath *, id)))objc_msgSend)(NSClassFromString(@"UICollectionViewCellRegistration"), NSSelectorFromString(@"registrationWithCellClass:configurationHandler:"), LocationsCollectionViewCell.locationsCollectionViewCellClass, handler);
+    
+    return cellRegistration;
 }
 
 @end

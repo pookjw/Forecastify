@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F82B44729D0BD1800DC3A98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F82B44629D0BD1800DC3A98 /* Assets.xcassets */; };
-		4FA74C2029D2B76100DB17B4 /* BaseListPlatterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA74C1F29D2B76100DB17B4 /* BaseListPlatterCell.m */; };
+		4FA74C2029D2B76100DB17B4 /* LocationsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA74C1F29D2B76100DB17B4 /* LocationsCollectionViewCell.m */; };
 		4FC530D529D1A57100344200 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC530D429D1A57100344200 /* BaseViewController.m */; };
 		4FC530D829D1AABB00344200 /* PurpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC530D729D1AABB00344200 /* PurpleViewController.m */; };
 		4FD0873429D186370075053E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD0873329D186370075053E /* main.m */; };
@@ -25,8 +25,8 @@
 /* Begin PBXFileReference section */
 		4F82B43F29D0BD1800DC3A98 /* Forecastify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecastify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F82B44629D0BD1800DC3A98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4FA74C1E29D2B76100DB17B4 /* BaseListPlatterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseListPlatterCell.h; sourceTree = "<group>"; };
-		4FA74C1F29D2B76100DB17B4 /* BaseListPlatterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseListPlatterCell.m; sourceTree = "<group>"; };
+		4FA74C1E29D2B76100DB17B4 /* LocationsCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationsCollectionViewCell.h; sourceTree = "<group>"; };
+		4FA74C1F29D2B76100DB17B4 /* LocationsCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationsCollectionViewCell.m; sourceTree = "<group>"; };
 		4FC530D329D1A57100344200 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		4FC530D429D1A57100344200 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		4FC530D629D1AABB00344200 /* PurpleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurpleViewController.h; sourceTree = "<group>"; };
@@ -109,8 +109,6 @@
 			children = (
 				4FC530D329D1A57100344200 /* BaseViewController.h */,
 				4FC530D429D1A57100344200 /* BaseViewController.m */,
-				4FA74C1E29D2B76100DB17B4 /* BaseListPlatterCell.h */,
-				4FA74C1F29D2B76100DB17B4 /* BaseListPlatterCell.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -126,6 +124,8 @@
 				4FDBE54329D28CA400CD380D /* LocationsSectionModel.m */,
 				4FDBE54529D28CB400CD380D /* LocationsItemModel.h */,
 				4FDBE54629D28CB400CD380D /* LocationsItemModel.m */,
+				4FA74C1E29D2B76100DB17B4 /* LocationsCollectionViewCell.h */,
+				4FA74C1F29D2B76100DB17B4 /* LocationsCollectionViewCell.m */,
 			);
 			path = Locations;
 			sourceTree = "<group>";
@@ -211,7 +211,7 @@
 				4FDBE51529D288B600CD380D /* DLManager.m in Sources */,
 				4FDBE54129D28C9400CD380D /* LocationsViewModel.m in Sources */,
 				4FDBE54729D28CB400CD380D /* LocationsItemModel.m in Sources */,
-				4FA74C2029D2B76100DB17B4 /* BaseListPlatterCell.m in Sources */,
+				4FA74C2029D2B76100DB17B4 /* LocationsCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
