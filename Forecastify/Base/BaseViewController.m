@@ -7,11 +7,18 @@
 
 #import "BaseViewController.h"
 #import <objc/message.h>
+#import <objc/objc-sync.h>
 
 static BaseViewController * _baseViewController_managedObject(id self) {
     BaseViewController *managedObejct;
     object_getInstanceVariable(self, "managedObject", (void **)&managedObejct);
     return managedObejct;
+}
+
+static void _baseViewController_dealloc(id self, SEL cmd) {
+    [_baseViewController_managedObject(self) release];
+    struct objc_super superInfo = { self, [self superclass] };
+    ((void (*)(struct objc_super *, SEL))objc_msgSendSuper)(&superInfo, @selector(dealloc));
 }
 
 static void _baseViewController_loadView(id self, SEL cmd) {
@@ -48,6 +55,8 @@ static void _baseViewController_setView(id self, SEL cmd, id view) {
         
         class_addIvar(baseViewControllerClass, "managedObject", sizeof(id), rint(log2(sizeof(id))), @encode(id));
         
+        class_addMethod(baseViewControllerClass, @selector(dealloc), (IMP)_baseViewController_dealloc, nil);
+        
         class_addMethod(baseViewControllerClass, @selector(loadView), (IMP)_baseViewController_loadView, nil);
         
         class_addMethod(baseViewControllerClass, @selector(viewDidLoad), (IMP)_baseViewController_viewDidLoad, nil);
@@ -60,22 +69,22 @@ static void _baseViewController_setView(id self, SEL cmd, id view) {
     return baseViewControllerClass;
 }
 
-- (instancetype)init {
-    if (self = [super init]) {
-        id viewController = [BaseViewController.baseViewControllerClass new];
-        object_setInstanceVariable(viewController, "managedObject", self); // assign, for avoiding retain cycle.
-        
-        [self->_viewController release];
-        self->_viewController = [viewController retain];
-        [viewController release];
+- (id)viewController {
+    objc_sync_enter(self);
+    
+    __weak id viewController = self->_viewController;
+    
+    if (viewController) {
+        [viewController retain];
+    } else {
+        viewController = [BaseViewController.baseViewControllerClass new];
+        object_setInstanceVariable(viewController, "managedObject", [self retain]);
+        self->_viewController = viewController;
     }
     
-    return self;
-}
-
-- (void)dealloc {
-    [self->_viewController release];
-    [super dealloc];
+    objc_sync_exit(self);
+    
+    return [viewController autorelease];
 }
 
 - (id)view {
