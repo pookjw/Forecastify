@@ -9,6 +9,8 @@
 #import <objc/message.h>
 #import <objc/objc-sync.h>
 
+OBJC_EXPORT id objc_msgSendSuper2(void);
+
 static BaseViewController * _baseViewController_managedObject(id self) {
     BaseViewController *managedObejct;
     object_getInstanceVariable(self, "managedObject", (void **)&managedObejct);
@@ -18,7 +20,7 @@ static BaseViewController * _baseViewController_managedObject(id self) {
 static void _baseViewController_dealloc(id self, SEL cmd) {
     [_baseViewController_managedObject(self) release];
     struct objc_super superInfo = { self, [self superclass] };
-    ((void (*)(struct objc_super *, SEL))objc_msgSendSuper)(&superInfo, @selector(dealloc));
+    ((void (*)(struct objc_super *, SEL))objc_msgSendSuper2)(&superInfo, @selector(dealloc));
 }
 
 static void _baseViewController_loadView(id self, SEL cmd) {
@@ -88,22 +90,22 @@ static void _baseViewController_setView(id self, SEL cmd, id view) {
 
 - (id)view {
     struct objc_super superInfo = { self.viewController, [self.viewController superclass] };
-    return ((id (*)(struct objc_super *, SEL))objc_msgSendSuper)(&superInfo, @selector(view));
+    return ((id (*)(struct objc_super *, SEL))objc_msgSendSuper2)(&superInfo, @selector(view));
 }
 
 - (void)setView:(id)view {
     struct objc_super superInfo = { self.viewController, [self.viewController superclass] };
-    ((void (*)(struct objc_super *, SEL, id))objc_msgSendSuper)(&superInfo, @selector(setView:), view);
+    ((void (*)(struct objc_super *, SEL, id))objc_msgSendSuper2)(&superInfo, @selector(setView:), view);
 }
 
 - (void)loadView {
     struct objc_super superInfo = { self.viewController, [self.viewController superclass] };
-    ((void (*)(struct objc_super *, SEL))objc_msgSendSuper)(&superInfo, @selector(loadView));
+    ((void (*)(struct objc_super *, SEL))objc_msgSendSuper2)(&superInfo, @selector(loadView));
 }
 
 - (void)viewDidLoad {
     struct objc_super superInfo = { self.viewController, [self.viewController superclass] };
-    ((void (*)(struct objc_super *, SEL))objc_msgSendSuper)(&superInfo, @selector(viewDidLoad));
+    ((void (*)(struct objc_super *, SEL))objc_msgSendSuper2)(&superInfo, @selector(viewDidLoad));
 }
 
 @end

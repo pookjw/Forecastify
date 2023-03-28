@@ -9,6 +9,8 @@
 #import <objc/message.h>
 #import <objc/objc-sync.h>
 
+OBJC_EXPORT id objc_msgSendSuper2(void);
+
 static LocationsCollectionViewCell * _locationsCollectionViewCell_managedObject(id self) {
     LocationsCollectionViewCell *managedObject;
     object_getInstanceVariable(self, "managedObject", (void **)&managedObject);
@@ -17,7 +19,7 @@ static LocationsCollectionViewCell * _locationsCollectionViewCell_managedObject(
 
 static id _locationsCollectionViewCell_initWithFrame(id self, SEL cmd, CGRect frame) {
     struct objc_super superInfo = { self, [self superclass] };
-    self = ((id (*)(struct objc_super *, SEL, CGRect))objc_msgSendSuper)(&superInfo, @selector(initWithFrame:), frame);
+    self = ((id (*)(struct objc_super *, SEL, CGRect))objc_msgSendSuper2)(&superInfo, @selector(initWithFrame:), frame);
     
     LocationsCollectionViewCell *managedObject = [[LocationsCollectionViewCell alloc] initWithFrame:frame];
     object_setInstanceVariable(self, "managedObject", [managedObject retain]);
@@ -91,12 +93,12 @@ static void _locationsCollectionViewCell_prepareForReuse(id self, SEL cmd) {
 
 - (id)contentView {
     struct objc_super superInfo = { self.locationsCollectionViewCell, [self.locationsCollectionViewCell superclass] };
-    return ((id (*)(struct objc_super *, SEL))objc_msgSendSuper)(&superInfo, @selector(contentView));
+    return ((id (*)(struct objc_super *, SEL))objc_msgSendSuper2)(&superInfo, @selector(contentView));
 }
 
 - (void)prepareForReuse {
     struct objc_super superInfo = { self.locationsCollectionViewCell, [self.locationsCollectionViewCell superclass] };
-    ((void (*)(struct objc_super *, SEL))objc_msgSendSuper)(&superInfo, @selector(prepareForReuse));
+    ((void (*)(struct objc_super *, SEL))objc_msgSendSuper2)(&superInfo, @selector(prepareForReuse));
 }
 
 @end
